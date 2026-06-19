@@ -1,0 +1,57 @@
+/* =====================================================================
+   components.css — buttons, utility classes, theme toggle, back-to-top
+   ===================================================================== */
+
+/* ---------- buttons ---------- */
+.btn {
+  --btn-bg: var(--surface);
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .85rem 1.4rem; border-radius: 100px;
+  font-weight: 700; font-size: var(--step--1); letter-spacing: .01em;
+  border: 1px solid transparent; white-space: nowrap;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s, filter .2s;
+}
+.btn:active { transform: translateY(1px) scale(.99); }
+.btn-icon { width: 18px; height: 18px; transition: transform .25s var(--ease); }
+.btn:hover .btn-icon { transform: translateX(4px); }
+.btn-sm { padding: .6rem 1.1rem; }
+.btn-block { width: 100%; justify-content: center; }
+
+.btn-primary {
+  background: var(--grad-brand); color: #fff;
+  box-shadow: 0 12px 28px -10px var(--violet);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -12px var(--violet); filter: brightness(1.05); }
+
+.btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+.btn-ghost:hover { background: var(--surface-2); transform: translateY(-3px); }
+
+.btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+.btn-outline:hover { border-color: var(--violet); color: var(--violet-2); transform: translateY(-3px); }
+
+/* ---------- utility classes ---------- */
+.gradient-text { background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* ---------- theme toggle ---------- */
+.theme-toggle {
+  display: grid; place-items: center; width: 40px; height: 40px;
+  border-radius: 11px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--text); transition: background .2s, transform .3s var(--ease);
+}
+.theme-toggle:hover { background: var(--surface-2); transform: rotate(18deg); }
+.theme-toggle svg { width: 19px; height: 19px; }
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+/* ---------- back to top ---------- */
+.to-top {
+  position: fixed; right: 22px; bottom: 22px; z-index: 90;
+  width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--grad-brand); color: #fff; box-shadow: 0 12px 28px -8px var(--violet);
+  opacity: 0; visibility: hidden; transform: translateY(16px) scale(.9);
+  transition: all .35s var(--ease);
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { transform: translateY(-4px) scale(1.05); }
+.to-top svg { width: 22px; height: 22px; }
