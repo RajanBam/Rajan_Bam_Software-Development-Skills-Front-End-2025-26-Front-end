@@ -1,0 +1,36 @@
+/* =====================================================================
+   slideshow.css — responsive gallery slideshow
+   ===================================================================== */
+
+.slideshow { position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-md); }
+.slides { position: relative; height: clamp(280px, 46vw, 460px); }
+.slide {
+  position: absolute; inset: 0; display: flex; align-items: flex-end;
+  padding: clamp(1.4rem, 4vw, 2.6rem); opacity: 0; transform: scale(1.04);
+  transition: opacity .7s var(--ease), transform .7s var(--ease); visibility: hidden;
+}
+.slide.is-active { opacity: 1; transform: scale(1); visibility: visible; }
+.slide-1 { background: linear-gradient(120deg, #6a5cff, #22d3ee); }
+.slide-2 { background: linear-gradient(120deg, #ff6b81, #fbbf24); }
+.slide-3 { background: linear-gradient(120deg, #0ea5e9, #7c5cff); }
+.slide-4 { background: linear-gradient(120deg, #10b981, #06b6d4); }
+.slide::after { content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.5), transparent 60%); }
+.slide figcaption { position: relative; z-index: 2; color: #fff; }
+.slide-kicker { display: block; font-size: var(--step--1); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.slide-title { display: block; font-size: var(--step-2); font-weight: 800; letter-spacing: -.02em; margin-top: .3rem; max-width: 18ch; }
+.slide-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(0,0,0,.35); color: #fff; border: 1px solid rgba(255,255,255,.25);
+  backdrop-filter: blur(6px); transition: background .2s, transform .2s;
+}
+.slide-arrow:hover { background: rgba(0,0,0,.6); }
+.slide-arrow svg { width: 22px; height: 22px; }
+.slide-arrow.prev { left: 16px; } .slide-arrow.next { right: 16px; }
+.slide-arrow.prev:hover { transform: translateY(-50%) translateX(-3px); }
+.slide-arrow.next:hover { transform: translateY(-50%) translateX(3px); }
+.slide-dots { position: absolute; z-index: 3; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: .5rem; }
+.slide-dots button {
+  width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.5); transition: all .3s var(--ease);
+}
+.slide-dots button.active { background: #fff; width: 26px; border-radius: 100px; }
