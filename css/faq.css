@@ -1,0 +1,23 @@
+/* =====================================================================
+   faq.css — interactive accordion
+   ===================================================================== */
+
+.accordion { display: grid; gap: .8rem; }
+.acc-item { border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); overflow: hidden; transition: border-color .3s, background .3s; }
+.acc-item.open { border-color: color-mix(in srgb, var(--violet) 50%, var(--border)); background: var(--surface-2); }
+.acc-trigger {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.1rem 1.3rem; text-align: left; font-weight: 700; color: var(--heading); font-size: var(--step-0);
+}
+.acc-icon { position: relative; flex: 0 0 auto; width: 18px; height: 18px; }
+.acc-icon::before, .acc-icon::after {
+  content: ""; position: absolute; top: 50%; left: 50%; background: var(--violet-2);
+  transform: translate(-50%, -50%); border-radius: 2px; transition: transform .35s var(--ease);
+}
+.acc-icon::before { width: 16px; height: 2.5px; }
+.acc-icon::after  { width: 2.5px; height: 16px; }
+.acc-item.open .acc-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+.acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s var(--ease); }
+.acc-item.open .acc-panel { grid-template-rows: 1fr; }
+.acc-inner { overflow: hidden; }
+.acc-inner p { padding: 0 1.3rem 1.2rem; font-size: var(--step--1); }
