@@ -1,0 +1,29 @@
+/* =====================================================================
+   herobg.css — animated hero background (gradient blobs, grid, parallax)
+   ===================================================================== */
+
+.hero-bg { position: absolute; inset: 0; z-index: 1; overflow: hidden; }
+.blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; will-change: transform; }
+.blob-1 { width: 46vw; height: 46vw; max-width: 620px; max-height: 620px; top: -12%; left: -8%;
+  background: radial-gradient(circle, var(--violet), transparent 70%); animation: float1 16s ease-in-out infinite; }
+.blob-2 { width: 40vw; height: 40vw; max-width: 540px; max-height: 540px; top: 8%; right: -10%;
+  background: radial-gradient(circle, var(--cyan), transparent 70%); animation: float2 20s ease-in-out infinite; }
+.blob-3 { width: 34vw; height: 34vw; max-width: 460px; max-height: 460px; bottom: -14%; left: 30%;
+  background: radial-gradient(circle, var(--coral), transparent 70%); opacity: .4; animation: float3 24s ease-in-out infinite; }
+.grid-overlay {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--text) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--text) 6%, transparent) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at 50% 40%, #000, transparent 78%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, #000, transparent 78%);
+}
+
+@keyframes float1 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(6%,8%) scale(1.12);} }
+@keyframes float2 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-8%,6%) scale(1.08);} }
+@keyframes float3 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-6%,-10%) scale(1.15);} }
+
+@media (prefers-reduced-motion: reduce) {
+  .blob { animation: none; }
+}
