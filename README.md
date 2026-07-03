@@ -1,4 +1,4 @@
-# Rajan Bam — Front-End Portfolio
+# Rajan Bam Front-End Portfolio
 
 > Course project for **Software Development Skills: Front-End (2025–26)**, LUT University.
 
