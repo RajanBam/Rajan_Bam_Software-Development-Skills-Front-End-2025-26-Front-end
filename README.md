@@ -81,27 +81,6 @@ Then visit **http://localhost:8000** in your browser.
 
 ---
 
-## 🚀 Deployment (GitHub Pages)
-
-The site is deployed with **GitHub Pages** directly from this repository:
-
-1. Push to the `main` branch.
-2. In the repo, go to **Settings → Pages**.
-3. Under *Build and deployment*, set **Source: Deploy from a branch**,
-   **Branch: `main` / `root`**, then **Save**.
-4. GitHub publishes the site at
-   `https://sandippgautam.github.io/Rajan_Bam_Frontend/`.
-
-A `.nojekyll` file is included so all assets are served as-is.
-
----
-
-## 🎥 Demo video
-
-See **[VIDEO.md](VIDEO.md)** for a link to a short video of the project running.
-
----
-
 ## 🧾 Learning diary
 
 The learning diary documenting the work (15 June → 3 July 2026) lives in
