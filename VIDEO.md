@@ -6,7 +6,7 @@ toggle and mobile menu).
 
 **▶️ Watch the demo:** <!-- Replace the link below with your uploaded video URL -->
 
-`https://youtu.be/REPLACE_WITH_YOUR_VIDEO_ID`
+`https://youtu.be/_XsoMuGyXWA
 
 ---
 
