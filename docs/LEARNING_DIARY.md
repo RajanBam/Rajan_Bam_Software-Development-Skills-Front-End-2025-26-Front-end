@@ -3,7 +3,7 @@
 
 **Software Development Skills: Front-End — Online course, 2025–26**
 
-**Name:** Rajan Bam &nbsp;·&nbsp; **Student number:** _< insert student number >_
+**Name:** Rajan Bam &nbsp;·&nbsp; **Student number:** 002295635
 
 ---
 
